@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+    <link rel="stylesheet" href="login.css">
+    <title>login / sign up</title>
+</head>
+<body>
+    <div class="container front">
+        <div class="top">
+            <span>LOGIN</span>
+        </div >
+        <div class="logo">
+            <img src="logo.png" alt="logo">
+        </div>
+        <div class="form">
+            <form action="" method="post">
+                <div class="inputBox inputBoxFront">
+                    <label><i class="fa-solid fa-envelope"></i></label>
+                    <input type="email" placeholder="E-MAIL" class="input" required>
+                </div>
+                <div class="inputBox inputBoxFront">
+                    <label><i class="fa-solid fa-lock"></i></label>
+                    <input type="password" placeholder="Password" class="input" required>
+                </div>
+                <button type="submit" class="btn" >Log in</button>
+                <div class="user">New user? <span class="newUser">Sign Up</span></div>
+            </form>
+        </div>
+    </div>
+
+    <!-- --------------------------- back ---------------------------------- -->
+
+    <div class="container back">
+        <div class="top topBack">
+            <span>SIGN IN</span>
+        </div>
+        <div class="form formBack">
+            <form action="" method="post">
+                <div class="inputBox inputBoxBack">
+                    <label><i class="fa-solid fa-t"></i></label>
+                    <input type="text" placeholder="FIRST NAME" class="input" name="first_name" required>
+                </div>
+                <div class="inputBox inputBoxBack">
+                    <label><i class="fa-solid fa-t"></i></label>
+                    <input type="text" placeholder="LAST NAME" class="input" name="last_name" required>
+                </div>
+                <div class="inputBox inputBoxBack">
+                    <label><i class="fa-solid fa-envelope"></i></label>
+                    <input type="email" placeholder="E-MAIL" class="input" name="email" required>
+                </div>
+                <div class="inputBox inputBoxback">
+                    <label><i class="fa-solid fa-lock"></i></label>
+                    <input type="password" placeholder="Password" class="input" name="password" required>
+                </div>
+                <div class="inputBox inputBoxback">
+                    <label><i class="fa-solid fa-lock "></i></label>
+                    <input type="password" placeholder="Confirm password" class="input" name="confiirm_password" required>
+                </div>
+                <button type="submit" class="btn btnBack">Sign Up</button>
+                <div class="user userBack">Existing user? <span class="existingUser">log In</span></div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        let front = document.querySelector('.front');
+        let back = document.querySelector('.back');
+
+        let newUser = document.querySelector('.newUser');
+        let existingUser = document.querySelector('.existingUser');
+
+        newUser.addEventListener('click', function(){
+            front.style.zIndex = "1"
+            back.style.zIndex = "2"
+            front.style.transform = "rotateY(180deg)"
+            back.style.transform = "rotateY(0deg)"
+        })
+
+        existingUser.addEventListener('click', function(){
+            back.style.zIndex = "1"
+            front.style.zIndex = "2"
+            back.style.transform = "rotateY(180deg)"
+            front.style.transform = "rotateY(0deg)"
+        })
+    </script>
+</body>
+</html>
